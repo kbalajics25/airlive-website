@@ -16,7 +16,7 @@ connection = pymysql.connect(
     user=os.getenv("MYSQLUSER"),
     password=os.getenv("MYSQLPASSWORD"),
     database=os.getenv("MYSQLDATABASE"),
-    port=int(os.getenv("MYSQLPORT"))
+    port=int(os.getenv("MYSQLPORT", 3306))
 )
 
 @app.route('/api/contact', methods=['POST'])
