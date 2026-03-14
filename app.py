@@ -14,6 +14,15 @@ CORS(app)
 # -----------------------------
 # Database Connection
 # -----------------------------
+
+# Safe port handling
+mysql_port = os.getenv("MYSQLPORT")
+
+if not mysql_port:
+    mysql_port = 3306
+else:
+    mysql_port = int(mysql_port)
+    
 connection = pymysql.connect(
     host=os.getenv("MYSQLHOST"),
     user=os.getenv("MYSQLUSER"),
