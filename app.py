@@ -1,5 +1,7 @@
-from flask import Flask, render_template, request, jsonify
+from flask import Flask, render_template, request, jsonify, redirect
 from flask_cors import CORS
+import pymysql
+import os
 import smtplib
 from email.mime.text import MIMEText
 from email.mime.multipart import MIMEMultipart
@@ -8,6 +10,41 @@ from datetime import datetime
 
 app = Flask(__name__)
 CORS(app)
+
+connection = pymysql.connect(
+    host=os.getenv("MYSQLHOST"),
+    user=os.getenv("MYSQLUSER"),
+    password=os.getenv("MYSQLPASSWORD"),
+    database=os.getenv("MYSQLDATABASE"),
+    port=int(os.getenv("MYSQLPORT"))
+)
+
+@app.route('/api/contact', methods=['POST'])
+def contact():
+    try:
+        data = request.get_json()
+
+        name = data.get('name', '')
+        mobile = data.get('mobile', '')
+        message = data.get('message', '')
+
+        if not name or not mobile:
+            return jsonify({'error': 'Name and mobile number are required'}), 400
+
+        cursor = connection.cursor()
+
+        sql = "INSERT INTO contacts (name, mobile, message) VALUES (%s,%s,%s)"
+        cursor.execute(sql, (name, mobile, message))
+
+        connection.commit()
+
+        return jsonify({
+            'success': True,
+            'message': 'Thank you! We will contact you soon.'
+        })
+
+    except Exception as e:
+        return jsonify({'error': str(e)}), 500
 
 # FAQ Database for Chatbot
 FAQ_DATA = {
@@ -87,9 +124,9 @@ def chat():
     except Exception as e:
         return jsonify({'error': str(e)}), 500
 
-@app.route('/api/contact', methods=['POST'])
+"""@app.route('/api/contact', methods=['POST'])
 def contact():
-    """Contact form submission endpoint"""
+    Contact form submission endpoint
     try:
         data = request.get_json()
         name = data.get('name', '')
@@ -116,7 +153,10 @@ def contact():
             'message': 'Thank you! We will contact you soon.'
         })
     except Exception as e:
-        return jsonify({'error': str(e)}), 500
+        return jsonify({'error': str(e)}), 500"
+"""
+
+
 
 @app.route('/api/whatsapp', methods=['GET'])
 def whatsapp_redirect():
