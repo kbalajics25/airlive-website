@@ -124,39 +124,6 @@ def chat():
     except Exception as e:
         return jsonify({'error': str(e)}), 500
 
-"""@app.route('/api/contact', methods=['POST'])
-def contact():
-    Contact form submission endpoint
-    try:
-        data = request.get_json()
-        name = data.get('name', '')
-        mobile = data.get('mobile', '')
-        message = data.get('message', '')
-        
-        if not name or not mobile:
-            return jsonify({'error': 'Name and mobile number are required'}), 400
-        
-        # Log the contact submission
-        contact_data = {
-            'name': name,
-            'mobile': mobile,
-            'message': message,
-            'timestamp': datetime.now().isoformat()
-        }
-        
-        # Save to file (in production, use a database)
-        with open('contacts.json', 'a') as f:
-            f.write(json.dumps(contact_data) + '\n')
-        
-        return jsonify({
-            'success': True,
-            'message': 'Thank you! We will contact you soon.'
-        })
-    except Exception as e:
-        return jsonify({'error': str(e)}), 500"
-"""
-
-
 
 @app.route('/api/whatsapp', methods=['GET'])
 def whatsapp_redirect():
