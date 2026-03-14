@@ -11,6 +11,9 @@ from datetime import datetime
 app = Flask(__name__)
 CORS(app)
 
+# -----------------------------
+# Database Connection
+# -----------------------------
 connection = pymysql.connect(
     host=os.getenv("MYSQLHOST"),
     user=os.getenv("MYSQLUSER"),
@@ -19,6 +22,27 @@ connection = pymysql.connect(
     port=int(os.getenv("MYSQLPORT", 3306))
 )
 
+# -----------------------------
+# Create Table Automatically
+# -----------------------------
+cursor = connection.cursor()
+
+cursor.execute("""
+CREATE TABLE IF NOT EXISTS contacts(
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(100),
+    mobile VARCHAR(20),
+    message TEXT,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+)
+""")
+
+connection.commit()
+cursor.close()
+
+# -----------------------------
+# Contact API
+# -----------------------------
 @app.route('/api/contact', methods=['POST'])
 def contact():
     try:
@@ -33,10 +57,15 @@ def contact():
 
         cursor = connection.cursor()
 
-        sql = "INSERT INTO contacts (name, mobile, message) VALUES (%s,%s,%s)"
-        cursor.execute(sql, (name, mobile, message))
+        sql = """
+        INSERT INTO contacts (name, mobile, message)
+        VALUES (%s, %s, %s)
+        """
 
+        cursor.execute(sql, (name, mobile, message))
         connection.commit()
+
+        cursor.close()
 
         return jsonify({
             'success': True,
