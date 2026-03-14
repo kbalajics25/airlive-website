@@ -38,7 +38,7 @@ CREATE TABLE IF NOT EXISTS contacts(
 """)
 
 connection.commit()
-cursor.close()
+
 
 # -----------------------------
 # Contact API
