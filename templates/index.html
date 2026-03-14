@@ -1,0 +1,537 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Air Live - Where Music Meets Soul | Jubilee Hills, Hyderabad</title>
+    <meta name="description" content="Experience Hyderabad's premier live music venue. Bollywood bands, rooftop vibes, signature cocktails at Air Live Jubilee Hills.">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Outfit:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,700;1,700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <span class="logo-text">AIR</span>
+                <span class="logo-live">LIVE</span>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="#home" class="nav-link">Home</a></li>
+                <li><a href="#about" class="nav-link">About</a></li>
+                <li><a href="#menu" class="nav-link">Menu</a></li>
+                <li><a href="#events" class="nav-link">Events</a></li>
+                <li><a href="#gallery" class="nav-link">Gallery</a></li>
+                <li><a href="#contact" class="nav-link">Contact</a></li>
+            </ul>
+            <div class="nav-actions">
+                <a href="#contact" class="btn-book">Book Now</a>
+                <button class="hamburger" id="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-background">
+            <div class="sound-wave"></div>
+            <div class="sound-wave"></div>
+            <div class="sound-wave"></div>
+        </div>
+        <div class="hero-content">
+            <div class="hero-badge">Live Music Every Night</div>
+            <h1 class="hero-title">
+                <span class="title-line">Where Music</span>
+                <span class="title-line highlight">Meets Soul</span>
+            </h1>
+            <p class="hero-subtitle">Hyderabad's Premier Live Music Venue & Rooftop Bar</p>
+            <div class="hero-buttons">
+                <a href="#contact" class="btn-primary">Reserve Your Table</a>
+                <a href="#menu" class="btn-secondary">Explore Menu</a>
+            </div>
+            <div class="hero-info">
+                <div class="info-item">
+                    <i class="fas fa-clock"></i>
+                    <span>12 PM - 12 AM</span>
+                </div>
+                <div class="info-item">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <span>Jubilee Hills, Hyderabad</span>
+                </div>
+                <div class="info-item">
+                    <i class="fas fa-music"></i>
+                    <span>Live Bands Daily</span>
+                </div>
+            </div>
+        </div>
+        <div class="scroll-indicator">
+            <span>Scroll</span>
+            <div class="scroll-line"></div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <div class="about-grid">
+                <div class="about-content">
+                    <span class="section-label">Discover Air Live</span>
+                    <h2 class="section-title">A Bollywood Live Band Heaven</h2>
+                    <p class="about-text">
+                        Experience the pulse of Hyderabad's nightlife at Air Live Jubilee Hills. 
+                        We bring together the best live Bollywood bands from around the country, 
+                        creating an electrifying atmosphere where music, food, and drinks unite 
+                        in perfect harmony.
+                    </p>
+                    <p class="about-text">
+                        Perched on the 5th floor of Odyssey Mall with stunning rooftop seating, 
+                        we offer an upscale yet welcoming environment for music lovers, 
+                        professionals, and anyone seeking an unforgettable night out.
+                    </p>
+                    <div class="about-features">
+                        <div class="feature">
+                            <div class="feature-icon">
+                                <i class="fas fa-guitar"></i>
+                            </div>
+                            <h3>Live Performances</h3>
+                            <p>Top Bollywood bands every evening</p>
+                        </div>
+                        <div class="feature">
+                            <div class="feature-icon">
+                                <i class="fas fa-cocktail"></i>
+                            </div>
+                            <h3>Signature Cocktails</h3>
+                            <p>Expertly crafted drinks & mocktails</p>
+                        </div>
+                        <div class="feature">
+                            <div class="feature-icon">
+                                <i class="fas fa-utensils"></i>
+                            </div>
+                            <h3>Global Cuisine</h3>
+                            <p>North Indian, Italian, Asian & more</p>
+                        </div>
+                        <div class="feature">
+                            <div class="feature-icon">
+                                <i class="fas fa-building"></i>
+                            </div>
+                            <h3>Rooftop Vibes</h3>
+                            <p>Stunning city views & atmosphere</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="about-image">
+                    <div class="image-decoration"></div>
+                    <img src="https://images.unsplash.com/photo-1514525253161-7a46d19cd819?w=800&q=80" alt="Live music performance">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Menu Highlights -->
+    <section id="menu" class="menu">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-label">Culinary Excellence</span>
+                <h2 class="section-title">Menu Highlights</h2>
+                <p class="section-desc">From our kitchen to your table, every dish is a celebration</p>
+            </div>
+
+            <div class="menu-categories">
+                <button class="menu-tab active" data-category="appetizers">Appetizers</button>
+                <button class="menu-tab" data-category="mains">Main Course</button>
+                <button class="menu-tab" data-category="cocktails">Cocktails</button>
+                <button class="menu-tab" data-category="desserts">Desserts</button>
+            </div>
+
+            <div class="menu-grid" id="menuGrid">
+                <!-- Appetizers -->
+                <div class="menu-item" data-category="appetizers">
+                    <div class="menu-item-image">
+                        <img src="https://images.unsplash.com/photo-1599487488170-d11ec9c172f0?w=400&q=80" alt="Tandoori Platter">
+                    </div>
+                    <div class="menu-item-content">
+                        <h3>Tandoori Platter</h3>
+                        <p>Assorted kebabs with mint chutney</p>
+                        <span class="menu-price">₹599</span>
+                    </div>
+                </div>
+
+                <div class="menu-item" data-category="appetizers">
+                    <div class="menu-item-image">
+                        <img src="https://images.unsplash.com/photo-1626082927389-6cd097cdc6ec?w=400&q=80" alt="Paneer Tikka">
+                    </div>
+                    <div class="menu-item-content">
+                        <h3>Paneer Peri Peri Tikka</h3>
+                        <p>Spiced cottage cheese grilled to perfection</p>
+                        <span class="menu-price">₹449</span>
+                    </div>
+                </div>
+
+                <div class="menu-item" data-category="appetizers">
+                    <div class="menu-item-image">
+                        <img src="https://images.unsplash.com/photo-1603894584373-5ac82b2ae398?w=400&q=80" alt="Chicken Wings">
+                    </div>
+                    <div class="menu-item-content">
+                        <h3>Buffalo Chicken Wings</h3>
+                        <p>Crispy wings with spicy sauce</p>
+                        <span class="menu-price">₹499</span>
+                    </div>
+                </div>
+
+                <!-- Main Course -->
+                <div class="menu-item" data-category="mains">
+                    <div class="menu-item-image">
+                        <img src="https://images.unsplash.com/photo-1585937421612-70a008356fbe?w=400&q=80" alt="Butter Chicken">
+                    </div>
+                    <div class="menu-item-content">
+                        <h3>Butter Chicken</h3>
+                        <p>Creamy tomato gravy with tender chicken</p>
+                        <span class="menu-price">₹649</span>
+                    </div>
+                </div>
+
+                <div class="menu-item" data-category="mains">
+                    <div class="menu-item-image">
+                        <img src="https://images.unsplash.com/photo-1621996346565-e3dbc646d9a9?w=400&q=80" alt="Pasta">
+                    </div>
+                    <div class="menu-item-content">
+                        <h3>Truffle Pasta</h3>
+                        <p>Creamy pasta with truffle oil</p>
+                        <span class="menu-price">₹599</span>
+                    </div>
+                </div>
+
+                <div class="menu-item" data-category="mains">
+                    <div class="menu-item-image">
+                        <img src="https://images.unsplash.com/photo-1567337710282-00832b415979?w=400&q=80" alt="Biryani">
+                    </div>
+                    <div class="menu-item-content">
+                        <h3>Hyderabadi Biryani</h3>
+                        <p>Aromatic basmati with your choice of meat</p>
+                        <span class="menu-price">₹549</span>
+                    </div>
+                </div>
+
+                <!-- Cocktails -->
+                <div class="menu-item" data-category="cocktails">
+                    <div class="menu-item-image">
+                        <img src="https://images.unsplash.com/photo-1514362545857-3bc16c4c7d1b?w=400&q=80" alt="Signature Cocktail">
+                    </div>
+                    <div class="menu-item-content">
+                        <h3>Air Live Special</h3>
+                        <p>Our signature house cocktail</p>
+                        <span class="menu-price">₹399</span>
+                    </div>
+                </div>
+
+                <div class="menu-item" data-category="cocktails">
+                    <div class="menu-item-image">
+                        <img src="https://images.unsplash.com/photo-1546171753-97d7676e4602?w=400&q=80" alt="Mojito">
+                    </div>
+                    <div class="menu-item-content">
+                        <h3>Classic Mojito</h3>
+                        <p>Refreshing mint & lime</p>
+                        <span class="menu-price">₹349</span>
+                    </div>
+                </div>
+
+                <div class="menu-item" data-category="cocktails">
+                    <div class="menu-item-image">
+                        <img src="https://images.unsplash.com/photo-1621373750765-c5c0a9c06d9c?w=400&q=80" alt="Margarita">
+                    </div>
+                    <div class="menu-item-content">
+                        <h3>Spicy Margarita</h3>
+                        <p>Tequila with a kick</p>
+                        <span class="menu-price">₹449</span>
+                    </div>
+                </div>
+
+                <!-- Desserts -->
+                <div class="menu-item" data-category="desserts">
+                    <div class="menu-item-image">
+                        <img src="https://images.unsplash.com/photo-1551024506-0bccd828d307?w=400&q=80" alt="Chocolate Lava Cake">
+                    </div>
+                    <div class="menu-item-content">
+                        <h3>Chocolate Lava Cake</h3>
+                        <p>Warm cake with molten center</p>
+                        <span class="menu-price">₹299</span>
+                    </div>
+                </div>
+
+                <div class="menu-item" data-category="desserts">
+                    <div class="menu-item-image">
+                        <img src="https://images.unsplash.com/photo-1563805042-7684c019e1cb?w=400&q=80" alt="Tiramisu">
+                    </div>
+                    <div class="menu-item-content">
+                        <h3>Classic Tiramisu</h3>
+                        <p>Italian coffee-soaked delight</p>
+                        <span class="menu-price">₹349</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Events Section -->
+    <section id="events" class="events">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-label">What's On</span>
+                <h2 class="section-title">Upcoming Events</h2>
+                <p class="section-desc">Don't miss our incredible live performances</p>
+            </div>
+
+            <div class="events-grid">
+                <div class="event-card">
+                    <div class="event-date">
+                        <span class="day">15</span>
+                        <span class="month">MAR</span>
+                    </div>
+                    <div class="event-content">
+                        <h3>Friday Night Live</h3>
+                        <p>Featuring the sensational Bollywood band "Rhythm Nation"</p>
+                        <div class="event-meta">
+                            <span><i class="fas fa-clock"></i> 8:00 PM onwards</span>
+                            <span><i class="fas fa-ticket-alt"></i> ₹1000 entry</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="event-card">
+                    <div class="event-date">
+                        <span class="day">16</span>
+                        <span class="month">MAR</span>
+                    </div>
+                    <div class="event-content">
+                        <h3>Saturday Special</h3>
+                        <p>Double Dhamaka with Harish & Martin taking the stage</p>
+                        <div class="event-meta">
+                            <span><i class="fas fa-clock"></i> 8:00 PM onwards</span>
+                            <span><i class="fas fa-ticket-alt"></i> ₹2000 entry</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="event-card">
+                    <div class="event-date">
+                        <span class="day">20</span>
+                        <span class="month">MAR</span>
+                    </div>
+                    <div class="event-content">
+                        <h3>Midweek Melodies</h3>
+                        <p>Acoustic evening with Pranav Chandran</p>
+                        <div class="event-meta">
+                            <span><i class="fas fa-clock"></i> 7:30 PM onwards</span>
+                            <span><i class="fas fa-ticket-alt"></i> Free entry</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section id="gallery" class="gallery">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-label">Captured Moments</span>
+                <h2 class="section-title">Gallery</h2>
+            </div>
+
+            <div class="gallery-grid">
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1470229722913-7c0e2dbbafd3?w=600&q=80" alt="Live band performance">
+                    <div class="gallery-overlay">
+                        <i class="fas fa-search-plus"></i>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1516450360452-9312f5e86fc7?w=600&q=80" alt="Cocktails at bar">
+                    <div class="gallery-overlay">
+                        <i class="fas fa-search-plus"></i>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=600&q=80" alt="Restaurant interior">
+                    <div class="gallery-overlay">
+                        <i class="fas fa-search-plus"></i>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1429962714451-bb934ecdc4ec?w=600&q=80" alt="Night atmosphere">
+                    <div class="gallery-overlay">
+                        <i class="fas fa-search-plus"></i>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1528605248644-14dd04022da1?w=600&q=80" alt="Food platter">
+                    <div class="gallery-overlay">
+                        <i class="fas fa-search-plus"></i>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1415201364774-f6f0bb35f28f?w=600&q=80" alt="Rooftop view">
+                    <div class="gallery-overlay">
+                        <i class="fas fa-search-plus"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <div class="contact-grid">
+                <div class="contact-info">
+                    <span class="section-label">Get In Touch</span>
+                    <h2 class="section-title">Visit Us</h2>
+                    <p class="contact-desc">Ready for an unforgettable night? Reach out to us!</p>
+
+                    <div class="info-blocks">
+                        <div class="info-block">
+                            <div class="info-icon">
+                                <i class="fas fa-map-marker-alt"></i>
+                            </div>
+                            <div class="info-text">
+                                <h4>Location</h4>
+                                <p>5th Floor, Odyssey Mall<br>Above Jaguar Showroom<br>Road No 36, Jubilee Hills<br>Hyderabad - 500033</p>
+                            </div>
+                        </div>
+
+                        <div class="info-block">
+                            <div class="info-icon">
+                                <i class="fas fa-clock"></i>
+                            </div>
+                            <div class="info-text">
+                                <h4>Hours</h4>
+                                <p>Monday - Sunday<br>12:00 PM - 12:00 AM<br><strong>Happy Hours: 12 PM - 6 PM</strong></p>
+                            </div>
+                        </div>
+
+                        <div class="info-block">
+                            <div class="info-icon">
+                                <i class="fas fa-phone"></i>
+                            </div>
+                            <div class="info-text">
+                                <h4>Contact</h4>
+                                <p>Phone: +91 8088993323<br>Email: k.balajics25@gmail.com</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="social-links">
+                        <a href="https://www.facebook.com/share/1Bk3jSfwGw/" class="social-link" target="_blank" rel="noopener noreferrer"><i class="fab fa-facebook-f"></i></a>
+                        <a href="https://www.instagram.com/kbalajics25?igsh=Nmo3ZXZod3ZnYWU4" class="social-link" target="_blank" rel="noopener noreferrer"><i class="fab fa-instagram"></i></a>
+                        <a href="https://x.com/K_Balaji_CS" class="social-link" target="_blank" rel="noopener noreferrer"><i class="fab fa-twitter"></i></a>
+                        <a href="https://youtube.com/@simpletechconcepts?si=NwYz2oE1QgdC0DRq" class="social-link" target="_blank" rel="noopener noreferrer"><i class="fab fa-youtube"></i></a>
+                    </div>
+
+                    <button class="btn-whatsapp" id="whatsappBtn">
+                        <i class="fab fa-whatsapp"></i>
+                        Chat on WhatsApp
+                    </button>
+                </div>
+
+                <div class="contact-form-container">
+                    <h3>Reserve Your Table</h3>
+                    <form id="contactForm" class="contact-form">
+                        <div class="form-group">
+                            <label for="name">Name *</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="mobile">Mobile Number *</label>
+                            <input type="tel" id="mobile" name="mobile" pattern="[0-9]{10}" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Message (Optional)</label>
+                            <textarea id="message" name="message" rows="4"></textarea>
+                        </div>
+                        <button type="submit" class="btn-submit">
+                            <span>Submit Request</span>
+                            <i class="fas fa-paper-plane"></i>
+                        </button>
+                    </form>
+                    <div id="formMessage" class="form-message"></div>
+                </div>
+            </div>
+
+            <!-- Map -->
+            <div class="map-container">
+                <iframe 
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3806.316791442886!2d78.40813731487707!3d17.430046108802865!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bcb9148303fb30d%3A0x97b4d04730e78a03!2sAir%20Live%20Jubilee%20Hills!5e0!3m2!1sen!2sin!4v1647000000000!5m2!1sen!2sin" 
+                    width="100%" 
+                    height="450" 
+                    style="border:0;" 
+                    allowfullscreen="" 
+                    loading="lazy">
+                </iframe>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <div class="logo">
+                        <img src="{{ url_for('static', filename='images/logo.png') }}" alt="Air Live Bar" height="50">
+                    </div>
+                    <p>Where Music Meets Soul</p>
+                </div>
+                <div class="footer-copy">
+                    <p>&copy; 2026 Air Live Jubilee Hills. All rights reserved.</p>
+                    <p>Designed with passion for music lovers</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Chatbot -->
+    <div class="chatbot" id="chatbot">
+        <div class="chatbot-header" id="chatbotHeader">
+            <div class="chatbot-title">
+                <i class="fas fa-robot"></i>
+                <span>Air Live Assistant</span>
+            </div>
+            <button class="chatbot-toggle" id="chatbotClose">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+        <div class="chatbot-body" id="chatbotBody">
+            <div class="chat-message bot-message">
+                <div class="message-avatar">
+                    <i class="fas fa-robot"></i>
+                </div>
+                <div class="message-content">
+                    Hi! I'm here to help. Ask me about our hours, menu, live music, reservations, or anything else!
+                </div>
+            </div>
+        </div>
+        <div class="chatbot-input">
+            <input type="text" id="chatInput" placeholder="Type your question...">
+            <button id="chatSend"><i class="fas fa-paper-plane"></i></button>
+        </div>
+    </div>
+
+    <button class="chatbot-fab" id="chatbotFab">
+        <i class="fas fa-comment-dots"></i>
+    </button>
+
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+</html>
